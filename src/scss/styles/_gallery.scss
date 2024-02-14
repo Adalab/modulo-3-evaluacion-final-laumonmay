@@ -1,0 +1,44 @@
+.gallery{
+   
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    @media (min-width: 768px) {
+        padding: 30px;
+        gap: 25px;
+    }
+
+    &__card{
+        border: dotted rgb(7, 7, 7) 1px;
+        list-style-type: none;
+        padding: 6px 6px 20px 6px;
+      
+    }
+    &__image{
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        object-fit: scale-down;
+        @media (min-width: 768px) {
+            width: 250px;
+            height: 250px;
+        }
+    }
+    &__character{
+        font-size: 12px;
+        @media (min-width: 768px) {
+        font-size: 30px;
+        }
+    }
+    &__info{
+        font-size: 10px;
+        background-color: rgba(149, 141, 141, 0.326);
+        padding: 0px 3px 0px 3px;
+        @media (min-width: 768px) {
+            font-size: 25px;
+        }
+    }
+    
+}

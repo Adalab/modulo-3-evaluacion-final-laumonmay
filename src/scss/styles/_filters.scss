@@ -1,0 +1,28 @@
+.filters{
+
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__character{
+        margin-bottom: 7px;
+    }
+    &__title{
+        font-size: 17px;
+        margin: 0px 7px 0px 0px;
+    }
+    &__box{
+        margin-top: 8px;
+        padding: 5px;
+        font-size: 17px;
+        @media (min-width: 768px) {
+            border-radius: 5px;
+            border: solid rgb(113, 113, 113) 1.5px;
+            padding: 15px;
+            margin-top: 0px;
+            font-size: 30px;
+        }
+        
+    }
+}

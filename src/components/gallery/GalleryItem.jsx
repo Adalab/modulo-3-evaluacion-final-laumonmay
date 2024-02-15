@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-function GalleryItem({character}) {
+function GalleryItem({ character }) {
   return (
     <>
       <img
         className="gallery__image"
-        src= {character.image}
-        alt= {character.name}
+        src={character.image}
+        alt={character.name}
       />
       <div className="gallery__text">
         <h3 className="gallery__character">{character.name}</h3>
@@ -17,7 +17,7 @@ function GalleryItem({character}) {
 }
 
 GalleryItem.propTypes = {
-character: PropTypes.object.isRequired
-}
+  character: PropTypes.object.isRequired,
+};
 
 export default GalleryItem;

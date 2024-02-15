@@ -1,16 +1,12 @@
 import GalleryItem from "./GalleryItem";
 import PropTypes from "prop-types";
 
-function Gallery ({ dataCharacters }) {
-
+function Gallery({ dataCharacters }) {
   const htmlGallery = dataCharacters.map((character) => {
-
-    return(
-    <li key={character.id} className="gallery__card">
-
-      <GalleryItem character={character}/>
-      
-    </li>
+    return (
+      <li key={character.id} className="gallery__card">
+        <GalleryItem character={character} />
+      </li>
     );
   });
 
@@ -18,7 +14,7 @@ function Gallery ({ dataCharacters }) {
 }
 
 Gallery.propTypes = {
-  dataCharacters: PropTypes.array.isRequired
+  dataCharacters: PropTypes.array.isRequired,
 };
 
 export default Gallery;

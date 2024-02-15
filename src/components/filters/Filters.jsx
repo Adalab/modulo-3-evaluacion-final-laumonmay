@@ -1,28 +1,23 @@
-import FilterCharacter from './FilterCharacter';
-import FilterHome from './FilterHome';
-import PropTypes from 'prop-types';
+import FilterCharacter from "./FilterCharacter";
+import FilterHome from "./FilterHome";
+import PropTypes from "prop-types";
 
-function Filters({filterCharacters,handleFilterCharacters}) {
+function Filters({ filterCharacters, handleFilter }) {
+  return (
+    <form className="filters">
+      <FilterCharacter
+        filterCharacters={filterCharacters}
+        handleFilter={handleFilter}
+      />
 
-
-
-    return (
-        <form className="filters">
-          
-          <FilterCharacter 
-          filterCharacters={filterCharacters}
-          handleFilterCharacters={handleFilterCharacters}/>
-
-          <FilterHome/>
-          
-        </form>
-    );
+      <FilterHome handleFilter={handleFilter} />
+    </form>
+  );
 }
 
 Filters.propTypes = {
-
-filterCharacters: PropTypes.string,
-handleFilterCharacters: PropTypes.func.isRequired,
-}
+  filterCharacters: PropTypes.string,
+  handleFilter: PropTypes.func,
+};
 
 export default Filters;

@@ -13,26 +13,48 @@
     &__card{
         border: dotted rgb(7, 7, 7) 1px;
         list-style-type: none;
-        padding: 6px 6px 20px 6px;
-      
+        padding: 6px 17px 20px 17px;
+        width: 400px;
+        height: 268px;
     }
+
+    &__b{
+        position: relative;
+    }
+    &__a{
+      background-color: rgb(5, 5, 53);
+      width: 155px;
+      padding: 21px 0px 10px 0px;
+      transform: translate(45px, 71px);
+    }
+    &__frame{
+        width: 249px;
+        position: absolute;
+        top: -12px;
+        right:0px;
+    }
+    
     &__image{
+        
         border-radius: 5px;
-        width: 150px;
-        height: 150px;
+        width: 85px;
         object-fit: scale-down;
+        
+      
         @media (min-width: 768px) {
             width: 250px;
             height: 250px;
         }
     }
     &__character{
+        font-family: 'magic';
         font-size: 12px;
         @media (min-width: 768px) {
         font-size: 30px;
         }
     }
     &__info{
+        font-family: 'harry';
         font-size: 10px;
         background-color: rgba(149, 141, 141, 0.326);
         padding: 0px 3px 0px 3px;

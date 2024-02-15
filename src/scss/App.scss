@@ -1,9 +1,12 @@
 @import 'core/reset';
+@import 'core/variables';
 @import 'styles/header.scss';
 @import 'styles/filters.scss';
 @import 'styles/gallery.scss';
 
 .app{
     text-align: center;
-    padding: 40px 30px 40px 30px;
+    padding: 40px 0px 40px 0px;
+    cursor: url("/public/escoba.png"), auto;
 }
+

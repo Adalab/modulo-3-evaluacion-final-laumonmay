@@ -4,42 +4,57 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+   
+    gap: 17px;
     @media (min-width: 768px) {
         padding: 30px;
         gap: 25px;
     }
 
     &__card{
-        border: dotted rgb(7, 7, 7) 1px;
+       
         list-style-type: none;
-        padding: 6px 17px 20px 17px;
-        width: 400px;
-        height: 268px;
+        height: 235px;
+        width: 244px;
+        
+       
+        
     }
 
     &__b{
-        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
     }
     &__a{
       background-color: rgb(5, 5, 53);
-      width: 155px;
-      padding: 21px 0px 10px 0px;
-      transform: translate(45px, 71px);
+      height: 146px;
+      padding-top: 28px;
+      transform: translate(0px, 66px);
     }
     &__frame{
         width: 249px;
-        position: absolute;
+        //position: absolute;
         top: -12px;
         right:0px;
+        // filter: brightness(5%);
+        filter: saturate(6%);
+        transform: translate(-3px, -156px);
     }
     
     &__image{
+        width: 91px;
+        height: 138px;
+        object-fit: contain;
+        filter: grayscale(52%);
+       
         
-        border-radius: 5px;
-        width: 85px;
-        object-fit: scale-down;
         
+        
+        
+        
+      
       
         @media (min-width: 768px) {
             width: 250px;

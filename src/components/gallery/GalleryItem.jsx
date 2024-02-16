@@ -14,14 +14,14 @@ function GalleryItem({ character }) {
       </figcaption>
       
            
-      <img className="gallery__frame" src="public\CARA_A.png" alt="" /> 
+       <img className="gallery__frame" src="\CARA_A.png" alt="" />  
 
 
       
-      {/* <div className="gallery__text">
+       <div className="gallery__text">
         <h3 className="gallery__character">{character.name}</h3>
         <span className="gallery__info">{character.species}</span>
-      </div> */}
+      </div>
     </div>
     
   );

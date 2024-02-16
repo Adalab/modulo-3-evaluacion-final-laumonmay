@@ -4,11 +4,17 @@
 @import 'styles/filters.scss';
 @import 'styles/gallery.scss';
 
+:root{
+  
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,9,121,0.4954774145986519) 49%, rgba(38,53,56,0.929651084066439) 100%);
+}
 .app{
     text-align: center;
-    padding: 40px 0px 40px 0px;
+    padding: 40px 0px 400px 0px;
     cursor: url("/public/escoba.png"), auto;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,9,121,0.4954774145986519) 49%, rgba(38,53,56,0.929651084066439) 100%);
+  
+    
+    border: ridge rgb(179, 168, 226) 3px;
+    margin: 18px 9px 18px 9px;
 }
 

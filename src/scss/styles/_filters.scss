@@ -1,28 +1,50 @@
 .filters{
 
    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    
+    padding: 0px 25px 0px 25px;
 
     &__character{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 7px;
+        
+        @media (min-width:768px) {
+        flex-direction: row; 
+        justify-content: center;               
+        }
     }
     &__title{
-        font-size: 17px;
-        margin: 0px 7px 0px 0px;
+        font-size: 22px;
+        color: white;
+        font-family: 'pur';
+        @media (min-width: 768px) {
+            margin-right: 7px;
+                                
+        }
     }
     &__box{
         margin-top: 8px;
-        padding: 5px;
+        padding: 2px 0px 1px 9px;
         font-size: 17px;
+        border-radius: 5px;
+        border: solid rgb(77, 30, 153) 1.5px;
         @media (min-width: 768px) {
-            border-radius: 5px;
-            border: solid rgb(113, 113, 113) 1.5px;
-            padding: 15px;
+            
+            border: solid rgb(77, 30, 153) 2px;
+            padding: 5px 0px 3px 9px;
             margin-top: 0px;
-            font-size: 30px;
+            font-size: 20px;
         }
-        
+    }
+    &__home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (min-width:768px) {
+               flex-direction: row;
+               justify-content: center;                  
+        }
     }
 }

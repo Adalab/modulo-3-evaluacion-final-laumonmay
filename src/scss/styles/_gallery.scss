@@ -4,12 +4,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-top: dotted rgb(193, 193, 215) 4px;
+    margin: 20px 30px 0px 30px;
+    gap: 30px;
    
-    gap: 17px;
-    @media (min-width: 768px) {
-        padding: 30px;
-        gap: 25px;
-    }
+     @media (min-width: 768px) {
+    margin: 50px 60px 0px 60px;
+    padding-top: 60px;
+    gap: 90px;
+     }
+
 
     &__card{
        
@@ -48,18 +52,11 @@
         height: 138px;
         object-fit: contain;
         filter: grayscale(52%);
-       
-        
-        
-        
-        
-        
-      
-      
-        @media (min-width: 768px) {
-            width: 250px;
-            height: 250px;
-        }
+    
+        // @media (min-width: 768px) {
+        //     width: 250px;
+        //     height: 250px;
+        // }
     }
     &__character{
         font-family: 'magic';
@@ -73,9 +70,9 @@
         font-size: 10px;
         background-color: rgba(149, 141, 141, 0.326);
         padding: 0px 3px 0px 3px;
-        @media (min-width: 768px) {
-            font-size: 25px;
-        }
+        // @media (min-width: 768px) {
+        //     font-size: 25px;
+        // }
     }
     
 }

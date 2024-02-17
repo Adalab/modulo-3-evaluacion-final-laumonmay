@@ -13,7 +13,10 @@ export function fetchCharacters (){
                 gender:eachCharacter.gender,
                 house:eachCharacter.house,
                 alive:eachCharacter.alive,
-                image:eachCharacter.image
+                image:eachCharacter.image,
+                dateOfBirth:eachCharacter.dateOfBirth,
+                actor:eachCharacter.actor
+                
             }
           })  
         })

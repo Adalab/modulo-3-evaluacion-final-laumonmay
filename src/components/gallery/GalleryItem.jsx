@@ -34,7 +34,7 @@ function GalleryItem({ character }) {
       
     {defaultImage}
            
-       <img className="card__frame" src="./CARA_A.png" alt="" />  
+       <img className="card__frame" src="./Card-A.png" alt="" />  
 
 
       

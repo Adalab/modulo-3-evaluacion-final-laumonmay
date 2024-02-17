@@ -1,0 +1,25 @@
+
+.chacharacterDetail{
+    display: flex;
+}
+.detail{
+
+    &__card{
+        width: 249px;   
+    }
+    
+    &__text{
+        width: 249px;
+        color: black;
+        background-color: red($color: #000000);
+    }
+    // &__character{
+    //     width: 249px;   
+    // }
+    // &__card{
+    //     width: 249px;   
+    // }
+    // &__card{
+    //     width: 249px;   
+}
+

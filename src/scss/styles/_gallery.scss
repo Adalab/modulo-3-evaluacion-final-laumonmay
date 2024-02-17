@@ -19,8 +19,15 @@
         list-style-type: none;
         height: 235px;
         width: 244px;
+    }
+    &__li:hover {
+        transform:  scale(1.2);
+        
+       
+        
 
     }
+    //transform: rotate(5deg);
 }
 
 .card{
@@ -45,6 +52,9 @@
         filter: saturate(6%);
         transform: translate(-3px, -156px);
     }
+
+
+
 //// IMAGEN DE RELLENO ////
     &__figcaptionDefault{
         transform: translate(17px, 68px);
@@ -61,6 +71,7 @@
 
 //// INFO DE LA TARJETA ////
     &__text{
+        text-decoration: none;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -71,6 +82,7 @@
         background: linear-gradient(97deg, rgba(251,211,131,1) 0%, rgba(244,173,29,1) 49%, rgba(241,194,100,1) 99%);
         padding: 0px 5px 0px 5px;
         width: 131px;
+        
         @media (min-width: 768px) {
             width: 200px;
             transform: translate(22px, -198px);
@@ -79,12 +91,15 @@
     }
     &__character{
         font-family: 'magic';
+        text-decoration: none;
         @media (min-width: 768px) {
         font-size: 30px;
+
        
         }
     }
     &__info{
+        text-decoration: none;
         font-family: 'harry';
         font-size: 17px;
         background-color: rgba(91, 86, 86, 0.587);

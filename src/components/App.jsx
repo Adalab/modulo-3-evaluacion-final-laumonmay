@@ -54,7 +54,7 @@ function App() {
     });
 
   const findCharacter = (id) => {
-    dataCharacters.find(character => character.id === id);
+    return dataCharacters.find(character => character.id === id);
   }
   // 5. RETURN CON EL HTML:
   return (
@@ -65,22 +65,19 @@ function App() {
         <Routes>
           
           <Route path= '/' element = {
-            <Gallery 
-            dataCharacters={filteredGallery} 
-            />
+            <>
+              <Filters
+              filterCharacters={filterCharacters}
+              handleFilter={handleFilter}
+              />
+              <Gallery 
+              dataCharacters={filteredGallery} 
+              />
+            </>
           }/>
 
-          <Route path="/" element = {
-            <Filters
-            filterCharacters={filterCharacters}
-            handleFilter={handleFilter}
-            />
-          }/>
-
-       
-
-
-          <Route path= '/' element = {<CharacterDetail findCharacter={findCharacter}/>} />
+         
+          <Route path= '/character/:id' element = {<CharacterDetail findCharacter={findCharacter}/>} />
           
 
         </Routes>

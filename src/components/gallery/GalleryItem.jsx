@@ -29,7 +29,7 @@ function GalleryItem({ character }) {
 
   return (
 
-      <Link to= {"/dataCharacter/" + character.id}> 
+      <Link to= {`/character/${character.id}`}> 
         <div className="card">
           {defaultImage}
 

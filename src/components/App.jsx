@@ -2,6 +2,7 @@ import "../scss/App.scss";
 import { useState, useEffect } from "react";
 import { fetchCharacters } from "../services/fetch";
 import lStorage from "../services/localStorage"
+import { Route, Routes } from "react-router-dom";
 
 import Header from "./Header";
 import Filters from "./filters/Filters";
@@ -51,21 +52,38 @@ function App() {
         return filterHome === character.house;
       }
     });
+
+  const findCharacter = (id) => {
+    dataCharacters.find(character => character.id === id);
+  }
   // 5. RETURN CON EL HTML:
   return (
     <div className="app">
       <Header />
       <main>
-        <Filters
-          filterCharacters={filterCharacters}
-          handleFilter={handleFilter}
-        />
-        <Gallery dataCharacters={filteredGallery} />
 
-        <CharacterDetail dataCharacters={dataCharacters}/>
-        
+        <Routes>
+          
+          <Route path= '/' element = {
+            <Gallery 
+            dataCharacters={filteredGallery} 
+            />
+          }/>
+
+          <Route path="/" element = {
+            <Filters
+            filterCharacters={filterCharacters}
+            handleFilter={handleFilter}
+            />
+          }/>
+
+       
 
 
+          <Route path= '/' element = {<CharacterDetail findCharacter={findCharacter}/>} />
+          
+
+        </Routes>
 
 
 

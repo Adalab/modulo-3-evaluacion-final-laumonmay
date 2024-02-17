@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
-function CharacterDetail({dataCharacters}) {
+function CharacterDetail({findCharacter}) {
 
-    console.log(dataCharacters.name);
+    const params = useParams();
+
+    const dataCharacters = findCharacter(params.id)
 
     return (
       <div className="characterDetail">
@@ -23,7 +26,7 @@ function CharacterDetail({dataCharacters}) {
 }
 CharacterDetail.propTypes = {
 
-dataCharacters: PropTypes.array,
+  findCharacter: PropTypes.func,
 
 }
 

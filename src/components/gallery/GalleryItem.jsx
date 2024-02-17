@@ -1,48 +1,46 @@
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
+
 
 function GalleryItem({ character }) {
-
   let defaultImage;
 
-  if(character.image){
-    defaultImage =
-    <figcaption className="card__figcaptionImage">
+  if (character.image) {
+    defaultImage = (
+      <figcaption className="card__figcaptionImage">
         <img
-            className="card__image"
-            src={character.image}
-            alt={character.name}
+          className="card__image"
+          src={character.image}
+          alt={character.name}
         />
       </figcaption>
-  }
-  else{
-    defaultImage =
-    <figcaption className="card__figcaptionDefault">
+    );
+  } else {
+    defaultImage = (
+      <figcaption className="card__figcaptionDefault">
         <img
-            className="card__defaultImage"
-            src= "./giphy.gif"
-            alt={character.name}
+          className="card__defaultImage"
+          src="./giphy.gif"
+          alt={character.name}
         />
       </figcaption>
+    );
   }
-
-
-
 
   return (
-    <div className="card">
-    
-      
-    {defaultImage}
-           
-       <img className="card__frame" src="./Card-A.png" alt="" />  
 
+      <Link to= {"/dataCharacter/" + character.id}> 
+        <div className="card">
+          {defaultImage}
 
-      
-       <div className="card__text">
-        <h3 className="card__character">{character.name}</h3>
-        <span className="card__info">{character.species}</span>
-      </div>
-    </div>
+          <img className="card__frame" src="./Card-A.png" alt="" />
+
+          <div className="card__text">
+            <h3 className="card__character">{character.name}</h3>
+            <span className="card__info">{character.species}</span>
+          </div>
+        </div>
+      </Link>
     
   );
 }

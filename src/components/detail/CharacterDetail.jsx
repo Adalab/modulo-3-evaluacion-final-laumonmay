@@ -1,6 +1,12 @@
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 
+import Gryffindor from "../images/Griffindor.png";
+import Hufflepuff from "../images/Hufflepuff.png";
+import Ravenclaw from "../images/Ravenclaw.png";
+import Slytherin from "../images/Slytherin.png";
+
+
 function CharacterDetail({ findCharacter }) {
   const params = useParams();
 
@@ -11,36 +17,67 @@ function CharacterDetail({ findCharacter }) {
     return <div className="characterDetail">No existe ese personaje</div>;
   }
 
+  let houseShield;
+
+  if(dataCharacters.house === "Gryffindor"){
+    houseShield = Gryffindor;
+  }
+  else if(dataCharacters.house === "Hufflepuff"){
+    houseShield = Hufflepuff;
+  }
+  else if(dataCharacters.house === "Ravenclaw"){
+    houseShield = Ravenclaw;
+  }
+  else if(dataCharacters.house === "Slytherin"){
+    houseShield = Slytherin;
+  }
+
   
 
   return (
-    <div className="characterDetail">
-      <figcaption>
-        <img
-          className="detail__image"
-          src={dataCharacters.image}
-          alt={dataCharacters.name}
-        />
-      </figcaption>
+    <section className="chromeDetail">
+      <div className="chromeFrame">
 
-      <h3 className="detail__character">- {dataCharacters.name} -</h3>
-      <span className="detail__birth">{dataCharacters.dateOfBirth}</span>
+        <div className="chromeEnds">
+          <h3 className="chromeEnds__name">{dataCharacters.name}</h3>
+          <span className="chromeEnds__gender">{dataCharacters.gender}</span>
+        </div>
 
 
-      <div className="detail__text">
-        
-        <span className="detail__info">- House: {dataCharacters.house}</span>
-        
-        
-        <span className="detail__info">- Specie: {dataCharacters.species}</span>
-    
-        <span className="detail__info">- Gender: {dataCharacters.gender}</span>
-        
-        <span className="detail__info">- Alternates names: {dataCharacters.alternate_name}</span>
-        
-        <span className="detail__info">- Status: {dataCharacters.alive}</span>
+        <figcaption className="image">
+          <img
+            className="image__img"
+            src={dataCharacters.image}
+            alt={dataCharacters.name}
+          />
+          <span className="specie">{dataCharacters.species}</span>
+        </figcaption>
+
+
+        <figcaption>
+          <img 
+          className="shield" 
+          src={dataCharacters.house || houseShield} 
+          alt={dataCharacters.house}  
+          />
+          
+        </figcaption>
+
+        <span ></span>
+
+        <p>
+          <span className="detail__birth">{dataCharacters.dateOfBirth}</span>
+        </p>
+
+
+        <span className="detail__info">{dataCharacters.alternate_name}</span>
+
+        <div className="chromeEnds">
+          <span className="chromeEnds__status">{dataCharacters.alive}♥</span>
+          <span className="chromeEnds__actor">{dataCharacters.actor}</span>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 CharacterDetail.propTypes = {

@@ -40,18 +40,27 @@ function App() {
       setFilterCharacters(value);
     }
   };
+
+
+  
   // 4. VARIABLES DE HTML:
   const filteredGallery = dataCharacters
-    .filter((character) =>
+    .filter((character) =>   // filtro por personaje //
       character.name.toLowerCase().includes(filterCharacters.toLowerCase())
     )
-    .filter((character) => {
+    .filter((character) => { // filtro por casa ///
       if (filterHome === "Todas") {
         return dataCharacters;
       } else {
         return filterHome === character.house;
       }
     });
+  
+    // listado de personajes filtrados ordenados alfabeticamente / ordena el array ya filtrado //
+
+  const OrderFilteredGallery =[...filteredGallery].sort((a,b) =>{
+    return a.name.localeCompare(b.name);
+  })
 
   const findCharacter = (id) => {
     return dataCharacters.find(character => character.id === id);
@@ -69,9 +78,10 @@ function App() {
               <Filters
               filterCharacters={filterCharacters}
               handleFilter={handleFilter}
+              
               />
               <Gallery 
-              dataCharacters={filteredGallery} 
+              dataCharacters={OrderFilteredGallery}
               />
             </>
           }/>
@@ -91,3 +101,5 @@ function App() {
 }
 
 export default App;
+
+

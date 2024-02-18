@@ -12,9 +12,13 @@
 }
 .app{
     text-align: center;
-    padding: 40px 0px 400px 0px;
+    padding: 15px 0px 10px 0px;
     border: ridge rgb(179, 168, 226) 3px;
     margin: 18px 9px 18px 9px;
     cursor: url("./image/escoba.png"), auto;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;
+    flex-direction: column;
 }
 

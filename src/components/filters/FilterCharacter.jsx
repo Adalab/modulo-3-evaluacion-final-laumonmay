@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
 
 function FilterCharacter({ filterCharacters, handleFilter }) {
+
+  const handleKeyEnter = (event) => {
+    if(event.key==="Enter"){
+      event.preventDefault();
+    }
+  };
+
   const handleInputCharacters = (event) => {
     handleFilter("character", event.currentTarget.value);
   };
@@ -16,6 +23,7 @@ function FilterCharacter({ filterCharacters, handleFilter }) {
         placeholder="Ej: Hermione"
         value={filterCharacters}
         onInput={handleInputCharacters}
+        onKeyDown={handleKeyEnter}
       />
     </label>
   );

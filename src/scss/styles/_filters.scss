@@ -1,40 +1,42 @@
 .filters{
     padding: 0px 25px 0px 25px;
-
+    /// FILTRO POR PERSONAJES ////
+    //======================================================
     &__character{
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 7px;
         margin-bottom: 10px;
-        
         @media (min-width:768px) {
-        flex-direction: row; 
-        justify-content: center;               
+            flex-direction: row; 
+            justify-content: center;               
         }
     }
     &__title{
         font-size: 22px;
-        color: white;
+        color:var(--color-title1);
         font-family: 'pur';
-        text-shadow: 0px 0px rgb(123, 123, 62), 2px -1px 0px rgb(51 53 59);
+        text-shadow: var(--color-shadow);
         @media (min-width: 768px) {
             margin-right: 7px;
             font-size: 35px;          
         }
     }
     &__box{
-       
         padding: 2px 0px 1px 9px;
         font-size: 17px;
         border-radius: 5px;
-        border: solid rgb(63 73 81) 2px;
+        border: solid var(--border-input)2px;
         @media (min-width: 768px) {
             padding: 5px 0px 3px 9px;
             font-size: 20px;
-            border: solid rgb(63 73 81) 3px;
+            border: solid var(--border-input)3px;
         }
     }
+    //// FILTRO POR CASA ////
+    //======================================================
+    
     &__home{
         display: flex;
         flex-direction: column;
@@ -45,37 +47,37 @@
                margin-top: 20px;               
         }
     }
-    .gender{
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
+    //// FILTRO POR GENERO ////
+    //======================================================
+    
+    &__gender{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    @media (min-width:768px) {
+        margin-top: 40px;
+        justify-content: space-evenly;
+        }
+    }
+    
+    &__titleGender{
+        margin: 0px 8px 0px 4px;
+        font-family: 'pur';
+        color: var(--color-title1);
+        text-shadow: var(--color-shadow);
+        font-size: 20px;
         @media (min-width:768px) {
-            margin-top: 40px;
-            justify-content: center;
-         }
-        
+            font-size: 35px;
+        }
+    }
+}
 
-        &__option{
-            margin-right: 35px;
-            @media (min-width:768px) {
-                margin-right: 65px;
-         }
-        }
-        &__title{
-            margin: 0px 8px 0px 4px;
-            font-family: 'pur';
-            color: white;
-            text-shadow: 0px 0px rgb(123, 123, 62), 2px -1px 0px rgb(51 53 59);
-            font-size: 20px;
-            @media (min-width:768px) {
-                font-size: 35px;
-            }
-        }
-    }
-    .icon{
-        font-size: 35px;
-    }
-    .radio{
-        transform: scale(1.5);
-    }
+//// ICONOS GENERO ////
+//======================================================
+
+.icon{
+    font-size: 35px;
+}
+.radio{
+    transform: scale(1.5);
 }

@@ -8,9 +8,9 @@ function FilterGender({handleFilter, filterGender}) {
         handleFilter("gender", event.currentTarget.value);
     };
     return (
-      <div className='gender'>
-        <label className= "gender__option" htmlFor="female">
-        <i className="fa-solid fa-venus icon"></i><span className="gender__title">Female</span>
+      <div className='filters__gender'>
+        <label className= "filters__option" htmlFor="female">
+        <i className="fa-solid fa-venus icon"></i><span className="filters__titleGender">Female</span>
           <input 
           className='radio'
           type="radio" 
@@ -22,8 +22,8 @@ function FilterGender({handleFilter, filterGender}) {
           />
         </label>
         
-        <label htmlFor="male">
-        <i className="fa-solid fa-mars icon"></i><span className="gender__title"> Male</span>
+        <label className= "filters__option"  htmlFor="male">
+        <i className="fa-solid fa-mars icon"></i><span className="filters__titleGender"> Male</span>
           <input 
           className='radio'
           type="radio"
@@ -31,6 +31,19 @@ function FilterGender({handleFilter, filterGender}) {
           id="male" 
           value={"male"}
           checked={filterGender === "male"}
+          onChange={handleChangeGender}
+          />
+        </label>
+
+        <label className= "filters__option"  htmlFor="all">
+        <i className="fa-solid fa-venus-mars icon"></i><span className="filters__titleGender"> All</span>
+          <input 
+          className='radio'
+          type="radio"
+          name="gender"
+          id="all" 
+          value={"all"}
+          checked={filterGender === "all"}
           onChange={handleChangeGender}
           />
         </label>

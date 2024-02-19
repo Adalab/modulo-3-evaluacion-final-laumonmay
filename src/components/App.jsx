@@ -18,22 +18,23 @@ function App() {
 
   const [filterHome, setFilterHome] = useState("Gryffindor");
   const [filterCharacters, setFilterCharacters] = useState("");
-  const [filterGender, setFilterGender] = useState("female");
+  const [filterGender, setFilterGender] = useState("all");
 
   // 2.USE-EFFECT:
   //=============================================
 
   useEffect(() => {
-    if (!lStorage.includes("characters")) { // si en lStorage no existe la variable characters...
-    
+    if (!lStorage.includes("characters")) {
+      // si en lStorage no existe la variable characters...
+
       fetchCharacters() // hacer el fetch
-        .then((data) => { // y cuando tenga data, quiero:
+        .then((data) => {
+          // y cuando tenga data, quiero:
           setDataCharacters(data); // 1º guardar data en setDataCharacters
           lStorage.set("characters", data); // 2º crear en lStorage la var characters y que se guarte data.
         });
     }
   }, []);
-  
 
   // 3. FUNCIONES HANDLE:
   //=============================================
@@ -43,38 +44,42 @@ function App() {
   const handleFilter = (filterType, value) => {
     if (filterType === "home") {
       setFilterHome(value);
-      
-    } 
-    else if (filterType === "character") {
+    } else if (filterType === "character") {
       setFilterCharacters(value);
-    }
-    else if (filterType === "gender") {
+    } else if (filterType === "gender") {
       setFilterGender(value);
     }
   };
 
-  
-
   // 4. VARIABLES DE HTML:
   //=============================================
-
 
   // FILTROS DE BÚSQUEDA //
 
   const filteredGallery = dataCharacters
 
-    .filter((character) => character.name.toLowerCase().includes(filterCharacters.toLowerCase())) // filtro por perSonaje
-    .filter((character) => character.gender === filterGender)
+    .filter((character) =>
+      character.name.toLowerCase().includes(filterCharacters.toLowerCase())
+    ) // filtro por personaje
 
-    .filter((character) => {  //filtro por casa
-    
+    .filter((character) => {
+      // filtro por genero
+      if (filterGender === "all") {
+        return dataCharacters;
+      } else {
+        return character.gender === filterGender;
+      }
+    })
+
+    .filter((character) => {
+      //filtro por casa
+
       if (filterHome === "Todas") {
         return dataCharacters;
       } else {
         return filterHome === character.house;
       }
-      })
-    
+    });
 
   // ORDEN ALFABÉTICO //
 
@@ -105,7 +110,6 @@ function App() {
               </>
             }
           />
-
           <Route
             path="/character/:id"
             element={<CharacterDetail findCharacter={findCharacter} />}

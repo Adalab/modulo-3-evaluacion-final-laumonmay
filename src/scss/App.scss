@@ -5,22 +5,20 @@
 @import 'styles/gallery.scss';
 @import 'styles/detail.scss';
 
-:root{
-  
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,9,121,0.4954774145986519) 49%, rgba(38,53,56,0.929651084066439) 100%);
 
-    text-decoration: none;
-  
-   
+
+:root{
+    background: var(--bg-web);
+    font-size: 62.5%;
+
 }
 .app{
     text-align: center;
     padding: 15px 0px 10px 0px;
-    border: ridge rgb(179, 168, 226) 3px;
+    border: ridge var(--frame-web) 3px;
     margin: 18px 9px 18px 9px;
-    cursor: url("./image/escoba.png"), auto;
     display: flex;
-    justify-content: center; /* Centrado horizontal */
+    justify-content: center; 
     align-items: center;
     flex-direction: column;
 }

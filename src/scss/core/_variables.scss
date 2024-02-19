@@ -1,18 +1,46 @@
-$color-background: #1e1e1e;
+:root{
+    
+    //// COLORES GENERALES ///
+    //======================
+    --color-title1: white;
+    --color-title2: black;
+    --bg-web:linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,9,121,0.4954774145986519) 49%, rgba(38,53,56,0.929651084066439) 100%);
+    --frame-web: rgb(179, 168, 226);
+    
+    //// COLORES DETALLES ////
+    //======================
+    --bg-cromo-text1:linear-gradient(97deg, rgba(251,211,131,1) 0%, rgba(244,173,29,1) 49%, rgba(241,194,100,1) 99%);
+    --bg-cromo-text2:rgba(91, 86, 86, 0.587);
+    --color-shadow: 0px 0px rgb(123, 123, 62), 2px -1px 0px rgb(51 53 59);
+    --border-input: rgb(63 73 81);
+    --color-button: #b3a8e2;
+    
 
-@font-face{
-    font-family: 'harry';
-    src:url(/fonts/HARRYP__.TTF);
-}
-@font-face{
-    font-family: 'lumos';
-    src:url(/fonts/LUMOS.TTF);
-}
-@font-face{
-    font-family: 'magic';
-    src:url(/fonts/magic-school.one.ttf);
-}
-@font-face{
-    font-family: 'pur';
-    src:url(/fonts/purple-3.ttf);
+     //// COLORES TARJETA ////
+    //======================
+    --tarFrame:rgb(245, 203, 97);
+    --tarGradient: radial-gradient(
+        circle,
+        rgba(255, 191, 121, 1) 0%,
+        rgba(250, 141, 68, 1) 49%,
+        rgba(247, 184, 57, 1) 99%);
+    
+    //// FUENTES ////
+    //======================
+    @font-face{
+        font-family: 'harry';
+        src:url(/fonts/HARRYP__.TTF);
+    }
+    @font-face{
+        font-family: 'lumos';
+        src:url(/fonts/LUMOS.TTF);
+    }
+    @font-face{
+        font-family: 'magic';
+        src:url(/fonts/magic-school.one.ttf);
+    }
+    @font-face{
+        font-family: 'pur';
+        src:url(/fonts/purple-3.ttf);
+    }
 }

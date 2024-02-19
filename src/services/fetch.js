@@ -14,8 +14,8 @@ export function fetchCharacters (){
                 house:eachCharacter.house,
                 alive:eachCharacter.alive,
                 image:eachCharacter.image,
-                dateOfBirth:eachCharacter.dateOfBirth,
-                actor:eachCharacter.actor
+                actor:eachCharacter.actor,
+                alternate_names:eachCharacter.alternate_names
                 
             }
           })  

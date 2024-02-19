@@ -6,6 +6,7 @@ import Hufflepuff from "../../images/Hufflepuff.png";
 import Ravenclaw from "../../images/Ravenclaw.png";
 import Slytherin from "../../images/Slytherin.png";
 import Giphy from "../../images/giphy.gif";
+import BackButton from "../button/BackButton";
 
 
 
@@ -15,7 +16,6 @@ function CharacterDetail({ findCharacter }) {
   const params = useParams();
 
   const dataCharacters = findCharacter(params.id);
- 
 
   if (dataCharacters === undefined) {
     return <div className="characterDetail">No existe ese personaje</div>;
@@ -24,17 +24,13 @@ function CharacterDetail({ findCharacter }) {
   // Personalizar los escudos //
   let houseShield;
 
-  if(dataCharacters.house === "Gryffindor"){
+  if (dataCharacters.house === "Gryffindor") {
     houseShield = Gryffindor;
-    
-  }
-  else if(dataCharacters.house === "Hufflepuff"){
+  } else if (dataCharacters.house === "Hufflepuff") {
     houseShield = Hufflepuff;
-  }
-  else if(dataCharacters.house === "Ravenclaw"){
+  } else if (dataCharacters.house === "Ravenclaw") {
     houseShield = Ravenclaw;
-  }
-  else if(dataCharacters.house === "Slytherin"){
+  } else if (dataCharacters.house === "Slytherin") {
     houseShield = Slytherin;
   }
 
@@ -65,67 +61,50 @@ function CharacterDetail({ findCharacter }) {
       </figcaption>
     );
   }
-  
+
   // Para poner el simbolo del género //
   let gender;
 
-  if(dataCharacters.gender === "female"){
-    gender = (
-      <i className="fa-solid fa-venus"></i>
-    );
-  }
-  else {
-    gender = (
-      <i className="fa-solid fa-mars"></i>
-    );
+  if (dataCharacters.gender === "female") {
+    gender = <i className="fa-solid fa-venus"></i>;
+  } else {
+    gender = <i className="fa-solid fa-mars"></i>;
   }
 
   // Para poner el simbolo estatus //
-  
+
   let status;
 
-  if(dataCharacters.alive){
-    status = (
-      <i className="fa-sharp fa-solid fa-heart-pulse"></i>
-    );
+  if (dataCharacters.alive) {
+    status = <i className="fa-sharp fa-solid fa-heart-pulse"></i>;
+  } else {
+    status = <i className="fa-solid fa-skull-crossbones"></i>;
   }
-  else {
-    status = (
-      <i className="fa-solid fa-skull-crossbones"></i>
-    );
-  }
-      
-    
-  
-
 
   return (
-    <section className="chromeDetail">
-      <div className="chromeFrame">
+    <section>
+      
+      <BackButton />
 
-        <div className="chromeEnds">
-          <h3 className="chromeEnds__name">{dataCharacters.name}</h3>
-          <span className="chromeEnds__gender">{gender}</span>
-        </div>
+      <div className="chromeDetail">
+        <div className="chromeFrame">
+          <div className="chromeEnds">
+            <h3 className="chromeEnds__name">{dataCharacters.name}</h3>
+            <span className="chromeEnds__gender">{gender}</span>
+          </div>
 
+          {defaultImage}
 
-        {defaultImage}
+          <figcaption>
+            <img className="shield" src={houseShield || ""} />
+          </figcaption>
 
-       
+          <span className="detail__info">{dataCharacters.alternate_name}</span>
 
-        <figcaption>
-          <img 
-          className="shield" 
-          src= {houseShield || ""} 
-          />
-        </figcaption>
-
-
-        <span className="detail__info">{dataCharacters.alternate_name}</span>
-
-        <div className="chromeEnds">
-          <span className="chromeEnds__status">{status}</span>
-          <span className="chromeEnds__actor">{dataCharacters.actor}</span>
+          <div className="chromeEnds">
+            <span className="chromeEnds__status">{status}</span>
+            <span className="chromeEnds__actor">{dataCharacters.actor}</span>
+          </div>
         </div>
       </div>
     </section>

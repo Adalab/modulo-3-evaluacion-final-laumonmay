@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function FilterHome({ handleFilter }) {
+function FilterHome({ handleFilter, filterHome }) {
   const handleInputHome = (event) => {
     handleFilter("home", event.currentTarget.value);
   };
@@ -14,7 +14,7 @@ function FilterHome({ handleFilter }) {
         id="home"
         onInput={handleInputHome}
       >
-        <option value="Gryffindor">Gryffindor</option>
+        <option value={filterHome}>Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Ravenclaw">Ravenclaw</option>
         <option value="Slytherin">Slytherin</option>
@@ -26,6 +26,7 @@ function FilterHome({ handleFilter }) {
 
 FilterHome.propTypes = {
   handleFilter: PropTypes.func,
+  filterHome: PropTypes.string,
 };
 
 export default FilterHome;

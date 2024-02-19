@@ -10,15 +10,21 @@ import BackButton from "../button/BackButton";
 
 
 
-
-
 function CharacterDetail({ findCharacter }) {
   const params = useParams();
 
   const dataCharacters = findCharacter(params.id);
 
   if (dataCharacters === undefined) {
-    return <div className="characterDetail">No existe ese personaje</div>;
+    return(
+      <div className="error">
+      <h3 className="error__text">- This character does not exist -</h3>
+      <img className="error__img"
+        src="https://img.wattpad.com/19ce27a4991318c598ea40c231bfab669fa82c11/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f7a71656c576f4161622d4c6250773d3d2d3837313338343835382e313633633836333230646466643532373231303639303034303139322e676966"
+        alt=""
+      />
+    </div>
+    )
   }
 
   // Personalizar los escudos //
@@ -76,15 +82,15 @@ function CharacterDetail({ findCharacter }) {
   let status;
 
   if (dataCharacters.alive) {
-    status = <i className="fa-sharp fa-solid fa-heart-pulse"></i>;
+    status = <i className="fa-sharp fa-solid fa-heart-pulse"><span className="textIco">Alive</span></i>;
   } else {
-    status = <i className="fa-solid fa-skull-crossbones"></i>;
+    status = <i className="fa-solid fa-skull-crossbones"><span className="textIco">Dead</span></i>;
   }
 
   return (
     <section>
       
-      <BackButton />
+      
 
       <div className="chromeDetail">
         <div className="chromeFrame">
@@ -107,6 +113,7 @@ function CharacterDetail({ findCharacter }) {
           </div>
         </div>
       </div>
+      <BackButton />
     </section>
   );
 }

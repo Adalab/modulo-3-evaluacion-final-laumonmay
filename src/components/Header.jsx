@@ -4,7 +4,7 @@ function Header() {
       <img
         className="header__image"
         src="https://www.linformaldesign.com/shop/wp-content/uploads/2021/03/harry-potter-logo.png"
-        alt=""
+        alt="Logo de Harry Potter"
       />
     </header>
   );

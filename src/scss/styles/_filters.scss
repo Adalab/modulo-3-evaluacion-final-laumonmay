@@ -1,14 +1,12 @@
 .filters{
-
-   
-    
     padding: 0px 25px 0px 25px;
 
     &__character{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 7px;
+        margin-top: 7px;
+        margin-bottom: 10px;
         
         @media (min-width:768px) {
         flex-direction: row; 
@@ -19,23 +17,22 @@
         font-size: 22px;
         color: white;
         font-family: 'pur';
+        text-shadow: 0px 0px rgb(123, 123, 62), 2px -1px 0px rgb(51 53 59);
         @media (min-width: 768px) {
             margin-right: 7px;
-                                
+            font-size: 35px;          
         }
     }
     &__box{
-        margin-top: 8px;
+       
         padding: 2px 0px 1px 9px;
         font-size: 17px;
         border-radius: 5px;
-        border: solid rgb(77, 30, 153) 1.5px;
+        border: solid rgb(63 73 81) 2px;
         @media (min-width: 768px) {
-            
-            border: solid rgb(77, 30, 153) 2px;
             padding: 5px 0px 3px 9px;
-            margin-top: 0px;
             font-size: 20px;
+            border: solid rgb(63 73 81) 3px;
         }
     }
     &__home{
@@ -44,7 +41,41 @@
         align-items: center;
         @media (min-width:768px) {
                flex-direction: row;
-               justify-content: center;                  
+               justify-content: center;
+               margin-top: 20px;               
         }
+    }
+    .gender{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        @media (min-width:768px) {
+            margin-top: 40px;
+            justify-content: center;
+         }
+        
+
+        &__option{
+            margin-right: 35px;
+            @media (min-width:768px) {
+                margin-right: 65px;
+         }
+        }
+        &__title{
+            margin: 0px 8px 0px 4px;
+            font-family: 'pur';
+            color: white;
+            text-shadow: 0px 0px rgb(123, 123, 62), 2px -1px 0px rgb(51 53 59);
+            font-size: 20px;
+            @media (min-width:768px) {
+                font-size: 35px;
+            }
+        }
+    }
+    .icon{
+        font-size: 35px;
+    }
+    .radio{
+        transform: scale(1.5);
     }
 }

@@ -8,29 +8,33 @@ function FilterGender({handleFilter, filterGender}) {
         handleFilter("gender", event.currentTarget.value);
     };
     return (
-      <div>
-
-        <input 
-        type="radio" 
-        name="gender" 
-        id="female" 
-        value={"female"}
-        checked={filterGender === "female"}
-        onChange={handleChangeGender}
-        />
-
-        <label htmlFor="female">Female</label>
-
-        <input 
-        type="radio"
-        name="gender"
-        id="male" 
-        value={"male"}
-        checked={filterGender === "male"}
-        onChange={handleChangeGender}
-        />
-
-        <label htmlFor="male">Male</label>
+      <div className='gender'>
+        <label className= "gender__option" htmlFor="female">
+        <i className="fa-solid fa-venus icon"></i><span className="gender__title">Female</span>
+          <input 
+          className='radio'
+          type="radio" 
+          name="gender" 
+          id="female" 
+          value={"female"}
+          checked={filterGender === "female"}
+          onChange={handleChangeGender}
+          />
+        </label>
+        
+        <label htmlFor="male">
+        <i className="fa-solid fa-mars icon"></i><span className="gender__title"> Male</span>
+          <input 
+          className='radio'
+          type="radio"
+          name="gender"
+          id="male" 
+          value={"male"}
+          checked={filterGender === "male"}
+          onChange={handleChangeGender}
+          />
+        </label>
+      
       </div>
     );
 }
